@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间选择控件</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="daterangepicker.css"/>
+
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="moment.js"></script>
+    <script type="text/javascript" src="daterangepicker-cn.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body style="margin: 60px 0">
+
+<div class="container">
+
+    <h1 style="margin: 0 0 20px 0">配置时间选择器</h1>
+
+    <div class="well configurator">
+
+        <form>
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <label for="parentEl">parentEl(时间选择控件的父元素，默认为body)</label>
+                        <input type="text" class="form-control" id="parentEl" value="" placeholder="body">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">startDate（默认开始时间）</label>
+                        <input type="text" class="form-control" id="startDate" value="07/01/2015">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endDate">endDate（默认结束时间）</label>
+                        <input type="text" class="form-control" id="endDate" value="07/15/2015">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="minDate">minDate（限制最早可点选时间）</label>
+                        <input type="text" class="form-control" id="minDate" value="" placeholder="YYYY/MM/DD(格式)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxDate">maxDate（限制最晚可点选时间）</label>
+                        <input type="text" class="form-control" id="maxDate" value="" placeholder="YYYY/MM/DD(格式)">
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="autoApply"> autoApply（时间区间选择后自动确认）
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="singleDatePicker"> singleDatePicker（单日历表选择一个日期）
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="showDropdowns"> showDropdowns（年、月添加下拉选择框）
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="showWeekNumbers"> showWeekNumbers （显示周数 从0101算起）
+                        </label>
+                    </div>
+                    <!--(boolean) Allow selection of dates with times, not just dates-->
+                    <!-- timePicker 显示不出  暂时将其相关功能隐藏 -->
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" id="timePicker"> timePicker-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--Use 24-hour instead of 12-hour times, removing the AM/PM selection-->
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" id="timePicker24Hour"> timePicker24Hour-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--(number) Increment of the minutes selection list for times (i.e. 30 to allow only selection of times ending in 0 or 30)-->
+                    <div class="form-group" hidden="hidden">
+                        <label for="timePickerIncrement">timePickerIncrement (in minutes)</label>
+                        <input type="text" class="form-control" id="timePickerIncrement" value="1">
+                    </div>
+                    <!-- Show seconds in the timePicker -->
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" id="timePickerSeconds"> timePickerSeconds-->
+                        <!--</label>-->
+                    <!--</div>-->
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="dateLimit"> dateLimit (时间跨度选择 days / months)
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="ranges"> ranges (选择日期范围)
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="locale"> locale (修改显示的样式)
+                        </label>
+                    </div>
+                    <!--(boolean) When enabled, the two calendars displayed will always be for two sequential months (i.e. January and February), and both will be advanced when clicking the left or right arrows above the calendars. When disabled, the two calendars can be individually advanced and display any month/year.-->
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" id="linkedCalendars" checked="checked"> linkedCalendars-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--(boolean) Indicates whether the date range picker should automatically update the value of an <input> element it's attached to at initialization and when the selected dates change.-->
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" id="autoUpdateInput" checked="checked"> autoUpdateInput-->
+                        <!--</label>-->
+                    <!--</div>-->
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <label for="opens">opens（打开位置）</label>
+                        <select id="opens" class="form-control">
+                            <option value="right" selected>right</option>
+                            <option value="left">left</option>
+                            <option value="center">center</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="drops">drops（打开方向）</label>
+                        <select id="drops" class="form-control">
+                            <option value="down" selected>down</option>
+                            <option value="up">up</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="buttonClasses">buttonClasses（按钮样式）</label>
+                        <input type="text" class="form-control" id="buttonClasses" value="btn btn-sm">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="applyClass">applyClass（确认样式）</label>
+                        <input type="text" class="form-control" id="applyClass" value="btn-success">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cancelClass">cancelClass（取消样式）</label>
+                        <input type="text" class="form-control" id="cancelClass" value="btn-default">
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 col-md-offset-2 demo">
+            <h4>Your Date Range Picker</h4>
+            <input type="text" id="config-demo" class="form-control">
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Configuration</h4>
+
+            <div class="well">
+                <textarea id="config-text" style="height: 300px; width: 100%; padding: 10px"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<style type="text/css">
+    .demo {
+        position: relative;
+    }
+
+    .demo i {
+        position: absolute;
+        bottom: 10px;
+        right: 24px;
+        top: auto;
+        cursor: pointer;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#config-text').keyup(function () {
+            eval($(this).val());
+        });
+
+        $('.configurator input, .configurator select').change(function () {
+            updateConfig();
+        });
+
+        $('.demo i').click(function () {
+            $(this).parent().find('input').click();
+        });
+
+        $('#startDate').daterangepicker({
+            singleDatePicker: true,
+            startDate: moment().subtract(6, 'days')
+        });
+
+        $('#endDate').daterangepicker({
+            singleDatePicker: true,
+            startDate: moment()
+        });
+
+        updateConfig();
+
+        function updateConfig() {
+            var options = {};
+
+            if ($('#singleDatePicker').is(':checked'))
+                options.singleDatePicker = true;
+
+            if ($('#showDropdowns').is(':checked'))
+                options.showDropdowns = true;
+
+            if ($('#showWeekNumbers').is(':checked'))
+                options.showWeekNumbers = true;
+
+            if ($('#timePicker').is(':checked'))
+                options.timePicker = true;
+
+            if ($('#timePicker24Hour').is(':checked'))
+                options.timePicker24Hour = true;
+
+            if ($('#timePickerIncrement').val().length && $('#timePickerIncrement').val() != 1)
+                options.timePickerIncrement = parseInt($('#timePickerIncrement').val(), 10);
+
+            if ($('#timePickerSeconds').is(':checked'))
+                options.timePickerSeconds = true;
+
+            if ($('#autoApply').is(':checked'))
+                options.autoApply = true;
+
+            if ($('#dateLimit').is(':checked'))
+                options.dateLimit = {days: 7};
+
+            if ($('#ranges').is(':checked')) {
+                options.ranges = {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                };
+            }
+
+            if ($('#locale').is(':checked')) {
+                options.locale = {
+                    format: 'MM/DD/YYYY HH:mm',
+                    separator: ' - ',
+                    applyLabel: 'Apply',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                };
+            }
+
+            if (!$('#linkedCalendars').is(':checked'))
+                options.linkedCalendars = false;
+
+            if (!$('#autoUpdateInput').is(':checked'))
+                options.autoUpdateInput = false;
+
+            if ($('#parentEl').val().length)
+                options.parentEl = $('#parentEl').val();
+
+            if ($('#startDate').val().length)
+                options.startDate = $('#startDate').val();
+
+            if ($('#endDate').val().length)
+                options.endDate = $('#endDate').val();
+
+            if ($('#minDate').val().length)
+                options.minDate = $('#minDate').val();
+
+            if ($('#maxDate').val().length)
+                options.maxDate = $('#maxDate').val();
+
+            if ($('#opens').val().length && $('#opens').val() != 'right')
+                options.opens = $('#opens').val();
+
+            if ($('#drops').val().length && $('#drops').val() != 'down')
+                options.drops = $('#drops').val();
+
+            if ($('#buttonClasses').val().length && $('#buttonClasses').val() != 'btn btn-sm')
+                options.buttonClasses = $('#buttonClasses').val();
+
+            if ($('#applyClass').val().length && $('#applyClass').val() != 'btn-success')
+                options.applyClass = $('#applyClass').val();
+
+            if ($('#cancelClass').val().length && $('#cancelClass').val() != 'btn-default')
+                options.cancelClass = $('#cancelClass').val();
+
+            $('#config-text').val("$('#demo').daterangepicker(" + JSON.stringify(options, null, '    ') + ", function(start, end, label) {\n  console.log(\"New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')\");\n});");
+
+            $('#config-demo').daterangepicker(options, function (start, end, label) {
+                console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+            });
+
+        }
+
+    });
+</script>
+
+</body>
+</html>

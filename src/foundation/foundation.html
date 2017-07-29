@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 确保页面可以自由缩放 itial-scale：初始缩放比例 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>foundation - 核心是移动端优先</title>
+    <link rel="stylesheet" href="foundation.min.css">
+    <link rel="stylesheet" href="foundation-icons.css">
+    <style type="text/css">
+        /* 进度条标签样式 */
+        .percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+        }
+    </style>
+    <script src="modernizr.js"></script>
+</head>
+<body>
+
+<h2 class="subheader">Foundation 浅色标题</h2>
+
+<div class="row">
+    <div class="medium-12 columns">
+        <div class="panel">
+
+            <h2>Foundation
+                <small>secondary text</small>
+                <p>Example <span class="label">我是小标签</span></p>
+            </h2>
+
+            <p>1.abbr 元素用于标签指示简称或缩写。</p>
+
+            <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+            <p>2.blockquote 元素用于定义块引用。</p>
+            <blockquote>
+                <p>学的不仅是技术，更是梦想！</p>
+                <cite>菜鸟语录</cite>
+            </blockquote>
+
+            <p>3.dl 元素用于定义一个描述性列表：</p>
+            <dl>
+                <dt>Coffee</dt>
+                <dd>- black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>- white cold drink</dd>
+            </dl>
+
+            <div style="padding:20px;">
+                <p>4.按钮样式</p>
+                <button type="button" class="button">Default</button>
+                <button type="button" class="button secondary large">Secondary large</button>
+                <button type="button" class="button success small">Success small</button>
+                <button type="button" class="button info tiny">Info tiny</button>
+                <button type="button" class="button warning radius">Warning radius</button>
+                <button type="button" class="button alert round disabled">Alert round disabled</button>
+                <button type="button" class="button expand">延展宽度为100%</button>
+            </div>
+
+            <p>5.圆角按钮组</p>
+            <ul class="button-group radius">
+                <li>
+                    <button type="button" class="button">Apple</button>
+                </li>
+                <li>
+                    <button type="button" class="button">Samsung</button>
+                </li>
+                <li>
+                    <button type="button" class="button">Sony</button>
+                </li>
+            </ul>
+
+            <p>圆形按钮组 .stack-for-small 用于小尺寸的屏幕，按钮由水平排列变为垂直排列：</p>
+            <ul class="button-group stack-for-small round">
+                <li>
+                    <button type="button" class="button">Apple</button>
+                </li>
+                <li>
+                    <button type="button" class="button">Samsung</button>
+                </li>
+                <li>
+                    <button type="button" class="button">Sony</button>
+                </li>
+            </ul>
+
+            <p>均匀延展5个按钮:</p>
+            <ul class="button-group even-8">
+                <li>
+                    <button type="button" class="button">A</button>
+                </li>
+                <li>
+                    <button type="button" class="button">B</button>
+                </li>
+                <li>
+                    <button type="button" class="button">C</button>
+                </li>
+                <li>
+                    <button type="button" class="button">D</button>
+                </li>
+                <li>
+                    <button type="button" class="button">E</button>
+                </li>
+            </ul>
+
+            <p>6.下拉菜单按钮 (需配置foundation.js)</p>
+            <a href="#" data-dropdown="id01" class="button dropdown">Dropdown Button</a>
+            <ul id="id01" data-dropdown-content class="f-dropdown">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+
+            <p>7.分割按钮</p>
+            <button class="button split">Split Button <span data-dropdown="id02"></span></button>
+            <ul id="id02" data-dropdown-content class="f-dropdown">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+
+            <p>8.图标工具栏</p>
+            <!-- 若需垂直加入vertical -->
+            <div class="icon-bar five-up">
+                <a href="#" class="item">
+                    <i class="fi-home"></i>
+                    <label>Home</label>
+                </a>
+                <a href="#" class="item">
+                    <i class="fi-share"></i>
+                    <label>Share</label>
+                </a>
+                <a href="#" class="item">
+                    <i class="fi-info"></i>
+                    <label>Info</label>
+                </a>
+                <a href="#" class="item">
+                    <i class="fi-mail"></i>
+                    <label>Mail</label>
+                </a>
+                <a href="#" class="item">
+                    <i class="fi-magnifying-glass"></i>
+                    <label>Search</label>
+                </a>
+            </div>
+
+            <div style="padding:20px;">
+                <p>9.提醒框</p>
+
+                <div data-alert class="alert-box">
+                    This is a default alert box.
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <div data-alert class="alert-box secondary">
+                    This is a secondary alert box.
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <div data-alert class="alert-box success">
+                    <strong>Success!</strong> This alert box indicates a successful or positive action.
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <div data-alert class="alert-box info">
+                    <strong>Info!</strong> This alert box indicates a neutral informative change or action.
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <div data-alert class="alert-box warning">
+                    <strong>Warning!</strong> This alert box indicates a warning that might need attention.
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <div data-alert class="alert-box alert">
+                    <strong>Alert!</strong> This alert box indicates a dangerous or potentially negative action.
+                    <a href="#" class="close">&times;</a>
+                </div>
+
+                <div style="padding:20px;">
+                    <h2>10.进度条标签</h2>
+
+                    <div class="progress">
+                        <span class="meter" style="position:relative;width:75%">
+                            <span class="percentage">75%</span>
+                        </span>
+                    </div>
+
+                    <div class="progress success">
+                        <span class="meter" style="position:relative;width:50%">
+                            <span class="percentage">50%</span>
+                        </span>
+                    </div>
+
+                    <div class="progress alert">
+                        <span class="meter" style="position:relative;width:25%">
+                            <span class="percentage">25%</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div style="padding:20px">
+                    <p>11.缩略图</p>
+
+                    <p>在 <code>&lt;a&gt;</code> 标签中添加 <code>.th</code> 类将图片设置为缩略图。 鼠标移动到上面会显示一个浅蓝色外框:</p>
+
+                    <p><strong>注意:</strong> Foundation 中图片默认是响应式的。重置窗口大小可以查看效果。</p>
+                    <a href="custom/images/scratch-card-msyh/mobile4-yellow.png" target="_blank" class="th">
+                        <img src="custom/images/scratch-card-msyh/mobile4-yellow.png" alt="yellow">
+                    </a>
+                </div>
+
+                <div style="padding:20px">
+                    <p>12.简洁弹窗</p>
+
+                    <p>要创建一个弹窗可以在 <code> &lt;ul&gt;</code> 元素上添加 <code>.clearing-thumbs</code> 类及
+                        <code>data-clearing</code> 属性。在 <code>&lt;ul&gt;</code> 内添加图片列表。</p>
+
+                    <ul class="clearing-thumbs" data-clearing>
+                        <!-- class="clearing-featured-img" 将当前图片设为缩略图显示的首页 且当前li只显示一张图片 -->
+                        <li class="clearing-featured-img"><a href="custom/images/scratch-card-msyh/mobile4-yellow.png"
+                                                             class="th"><img
+                                src="custom/images/scratch-card-msyh/mobile4-yellow.png"
+                                width="200" height="100"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="padding:20px;">
+                    <p>13.下拉菜单按钮</p>
+                    <!-- 可以通过添加 data-options="align:left|right|top" 来修改其方向 -->
+                    <a href="#" data-dropdown="id1" data-options="align:right" class="button dropdown">我是下拉菜单</a>
+                    <ul id="id1" data-dropdown-content class="f-dropdown">
+                        <li><a href="#">选项一</a></li>
+                        <li><a href="#">选项二</a></li>
+                    </ul>
+
+                    <p>14.分割按钮</p>
+                    <button class="button split">分割按钮<span data-dropdown="id03"></span></button>
+                    <ul id="id03" data-dropdown-content class="f-dropdown">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                    </ul>
+                </div>
+
+                <!-- 需初始化   $(document).foundation(); -->
+                <div>
+                    <p>15.手风琴实例</p>
+                    <ul class="accordion" data-accordion>
+                        <li class="accordion-navigation">
+                            <a href="#demo">手风琴 1</a>
+
+                            <div id="demo" class="content active">
+                                Demo 1 - Hello world~
+                            </div>
+                        </li>
+                        <li class="accordion-navigation">
+                            <a href="#demo2">手风琴 2</a>
+
+                            <div id="demo2" class="content">
+                                Demo 2 - Hello world~
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p>16.列表</p>
+
+                    <ul class="circle">
+                        <li>圆圈标识符</li>
+                        <li>圆圈标识符</li>
+                    </ul>
+
+                    <ul class="square">
+                        <li>方形标识符</li>
+                        <li>方形标识符</li>
+                    </ul>
+
+                    <ul class="inline-list">
+                        <li><a href="#">水平列表1</a></li>
+                        <li><a href="#">水平列表2</a></li>
+                        <li><a href="#">水平列表3</a></li>
+                    </ul>
+                </div>
+
+                <div style="border: 1px solid grey;background-color: whitesmoke">
+                    <p>17.选项卡</p>
+                    <ul class="tabs" data-tab="">
+                        <li class="tab-title"><a href="#home" aria-selected="false" tabindex="-1">主页</a></li>
+                        <li class="tab-title"><a href="#menu1" aria-selected="false" tabindex="-1">菜单 1</a></li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="content" id="home" aria-hidden="true" tabindex="-1">
+                            <h3>主页</h3>
+
+                            <p>我是主页的段落内容哦~</p>
+                        </div>
+                        <div class="content" id="menu1" aria-hidden="true" tabindex="-1">
+                            <h3>菜单 1</h3>
+
+                            <p>我是菜单1的文门内容~</p>
+                        </div>
+                        <div class="content active" id="menu2" aria-hidden="false">
+                            <h3>菜单 2</h3>
+
+                            <p>我是菜单2的文本内容</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p>18.分页居中</p>
+
+                    <p>分页居中可以 在 ul 外层添加 div 并使用 pagination-centered 类 :</p>
+
+                    <div class="pagination-centered">
+                        <ul class="pagination">
+                            <li class="arrow"><a href="#">«</a></li>
+                            <li class="current"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li class="arrow"><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <p>19.面包屑导航</p>
+
+                    <p>.breadcrumb 类用于展示面包屑导航:</p>
+                    <ul class="breadcrumbs">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Private</a></li>
+                        <li class="unavailable"><a href="#">Pictures</a></li>
+                        <li class="current">Vacation</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p>20.导航栏下拉菜单示例</p>
+                    <!--data-options="is_hover: false" 去掉则hover时也可触发-->
+                    <nav class="top-bar" data-topbar data-options="is_hover: false">
+                        <ul class="title-area">
+                            <li class="name">
+                                <h1><a href="#">WebSiteName</a></h1>
+                            </li>
+                            <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
+                               如果需要只显示图片，可以删除 "Menu" 文本 -->
+                            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                        </ul>
+
+                        <section class="top-bar-section">
+                            <ul class="left">
+                                <li class="has-dropdown">
+                                    <a href="#">Dropdown</a>
+                                    <ul class="dropdown">
+                                        <li><label>Level 1</label></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li class="has-dropdown">
+                                            <a href="#">New dropdown</a>
+                                            <ul class="dropdown">
+                                                <li><label>Level 2</label></li>
+                                                <li><a href="#">2nd level dropdown</a></li>
+                                                <li><a href="#">2nd level dropdown</a></li>
+                                                <li class="has-dropdown">
+                                                    <a href="#">New dropdown</a>
+                                                    <ul class="dropdown">
+                                                        <li><label>Level 3</label></li>
+                                                        <li><a href="#">3rd level dropdown</a></li>
+                                                        <li><a href="#">3rd level dropdown</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="right">
+                                <li><a href="#">Sign Up</a></li>
+                                <li><a href="#">Login</a></li>
+                            </ul>
+                        </section>
+                    </nav>
+
+                </div>
+
+                <div>
+                    <div class="fixed">
+                        <nav class="top-bar" data-topbar>
+                            <ul class="title-area">
+                                <li class="name">
+                                    <h1><a href="#">21.我是固定导航条</a></h1>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+
+                <div>
+                    <p>22.滚动时固定导航栏。</p>
+
+                    <div class="sticky">
+                        <nav class="top-bar" data-topbar>
+                            <ul class="title-area">
+                                <li class="name">
+                                    <h1><a href="#">WebSiteName</a></h1>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+
+                <div>
+                    <p>23.Foundation 麦哲伦（Magellan）导航</p>
+
+                    <div data-magellan-expedition="fixed">
+                        <nav class="top-bar" data-topbar>
+                            <ul class="title-area">
+                                <li class="name">
+                                    <h1><a href="#">WebSiteName</a></h1>
+                                </li>
+                            </ul>
+
+                            <section class="top-bar-section">
+                                <ul class="left">
+                                    <li data-magellan-arrival="page1"><a href="#page1">Page 1</a></li>
+                                    <li data-magellan-arrival="page2"><a href="#page2">Page 2</a></li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
+
+                    <div style="padding:20px;height:600px;">
+                        <div style="height:200px;background-color:#1abc9c;color:white;">
+                            <h3 data-magellan-destination="page1">Page1</h3>
+                            <a name="page1"></a>
+
+                            <p>滚动屏幕，自动跳转当前的page。</p>
+                        </div>
+
+                        <h3 data-magellan-destination="page2">Page2</h3>
+                        <a name="page2"></a>
+
+                        <p>滚动屏幕，自动跳转当前的page。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p>24.form表单</p>
+
+                    <form>
+                        <fieldset>
+                            <legend>fieldset Legend</legend>
+                            <label>Name
+                                <input type="text" placeholder="First Name..">
+                            </label>
+                            <label class="error">Email
+                                <input type="text" placeholder="Enter email..">
+                            </label>
+                            <small class="error">输入错误</small>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div>
+                    <p>25.开关</p>
+
+                    <span>默认</span>
+
+                    <div class="switch">
+                        <input id="mySwitch1" type="checkbox">
+                        <label for="mySwitch1"></label>
+                    </div>
+
+                    <span>圆角</span>
+
+                    <div class="switch radius">
+                        <input id="mySwitch2" type="checkbox">
+                        <label for="mySwitch2"></label>
+                    </div>
+
+                    <span>圆形</span>
+
+                    <div class="switch round">
+                        <input id="mySwitch3" type="checkbox">
+                        <label for="mySwitch3"></label>
+                    </div>
+                </div>
+
+                <div>
+                    <p>26.开关组</p>
+
+                    <form>
+                        <div class="switch">
+                            <input id="mySwitc1" type="radio" name="myGroup">
+                            <label for="mySwitc1"></label>
+                        </div>
+
+                        <div class="switch">
+                            <input id="mySwitc2" type="radio" checked name="myGroup">
+                            <label for="mySwitc2"></label>
+                        </div>
+
+                        <div class="switch">
+                            <input id="mySwitc3" type="radio" name="myGroup">
+                            <label for="mySwitc3"></label>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <p>27.默认滑块值</p>
+
+                    <div class="range-slider" data-slider data-options="initial: 80;">
+                        <span class="range-slider-handle"></span>
+                        <span class="range-slider-active-segment"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="small-10 columns">
+                        <div class="range-slider" data-slider data-options="display_selector: #mySlider;">
+                            <span class="range-slider-handle"></span>
+                            <span class="range-slider-active-segment"></span>
+                        </div>
+                    </div>
+                    <div class="small-2 columns">
+                        <span id="mySlider" style="display:block;margin-top:14px;"></span>
+                    </div>
+                </div>
+
+
+                <div>
+                    <p>28.自定义区间</p>
+
+                    <span id="mySlider1"></span>
+
+                    <div class="range-slider" data-slider
+                         data-options="display_selector: #mySlider1; start: 1; end: 20;">
+                        <span class="range-slider-handle"></span>
+                        <span class="range-slider-active-segment"></span>
+                    </div>
+
+                </div>
+
+                <div>
+                    <p>29.垂直滑块</p>
+
+                    <div class="range-slider vertical-range" data-slider data-options="vertical: true;">
+                        <span class="range-slider-handle"></span>
+                        <span class="range-slider-active-segment"></span>
+                    </div>
+                </div>
+
+                <div>
+                    <p>30.提示框</p>
+                    <span data-tooltip class="has-tip tip-top" title="Tip1!">顶部</span>
+                    <span data-tooltip class="has-tip tip-bottom" title="Tip2!">底部</span>
+                    <span data-tooltip class="has-tip tip-left" title="Tip3~">左边</span>
+                    <span data-tooltip class="has-tip tip-right" title="Tip4~">右边</span>
+                </div>
+
+                <div style="padding:20px;">
+                    <p>31.模态框大小</p>
+
+                    <ul>
+                        <li><code>.tiny</code>: 设置宽度为 30%</li>
+                        <li><code>.small</code>: 设置宽度为 40%</li>
+                        <li><code>.medium</code>: 设置宽度为 60%</li>
+                        <li><code>.large</code>: 设置宽度为 70%</li>
+                        <li><code>.xlarge</code>: 设置宽度为 95%</li>
+                        <li><code>.full</code>: 设置宽度喝高度为 100%</li>
+                    </ul>
+
+                    <button type="button" class="button" data-reveal-id="myModal">打开小个模态框</button>
+
+                    <div id="myModal" class="reveal-modal tiny" data-reveal>
+                        <h2>小个模态框</h2>
+
+                        <p>这是一个小个模态框。尝试使用不同的类来修改模态框大小。</p>
+                        <a class="close-reveal-modal">&times;</a>
+                    </div>
+                </div>
+
+
+                <div style="padding:20px;">
+                    <p>32.内嵌模态框</p>
+                    <!-- 触发模态框 -->
+                    <button type="button" class="button" data-reveal-id="myModal2">点击打开模态框</button>
+
+                    <!-- 第一个模态框 -->
+                    <div id="myModal2" class="reveal-modal" data-reveal>
+                        <h2>第一个模态框</h2>
+
+                        <p>点击以下按钮会打开一个新的模态框。如果打开新的模态框，那么第一个模态框就会被关闭。</p>
+
+                        <p><a href="#" data-reveal-id="secondModal" class="button success">打开第二个模态框</a></p>
+                        <a class="close-reveal-modal">&times;</a>
+                    </div>
+
+                    <!-- 第二个模态框 -->
+                    <div id="secondModal" class="reveal-modal" data-reveal>
+                        <h2>第二个模态框</h2>
+
+                        <p>第二个模态框，第一个模态框已关闭。</p>
+
+                        <p>Foundation 让新的模态框取代了第一个模态框。</p>
+                        <a class="close-reveal-modal">&times;</a>
+                    </div>
+                </div>
+
+                <div style="padding:20px;">
+                    <h2>内嵌模态框</h2>
+                    <!-- 触发模态框 -->
+                    <button type="button" class="button" data-reveal-id="myModal3   ">点击打开模态框</button>
+
+                    <!-- 第一个模态框 -->
+                    <div id="myModal3" class="reveal-modal" data-reveal>
+                        <h2>第一个模态框</h2>
+
+                        <p>点击以下按钮会打开一个新的模态框。如果打开新的模态框，那么第一个模态框就会被关闭。</p>
+
+                        <p><a href="#" data-reveal-id="secondModal3" class="button success"
+                              style="text-decoration:none;">打开第二个模态框</a></p>
+                        <a class="close-reveal-modal">&times;</a>
+                    </div>
+
+                    <!-- 第二个模态框 -->
+                    <div id="secondModal3" class="reveal-modal" data-reveal data-options="multiple_opened:true;">
+                        <h2>第二个模态框</h2>
+
+                        <p>第二个模态框，第一个模态在第二个模态框下面，并没有关闭。</p>
+
+                        <a class="close-reveal-modal">&times;</a>
+                    </div>
+                </div>
+
+
+                <!-- 需要JS初始化 Joyride -->
+                <div>
+                    <p>33.引导 - Joyride实例</p>
+
+                    <p> joyride 在页面载入后生效。</p>
+
+                    <h3 id="first">第一个停止位置!</h3><br>
+
+                    <h3 id="second">第二个停止位置!</h3>
+
+                    <ol class="joyride-list" data-joyride>
+                        <li data-id="first">
+                            <p>这是一个 Joyride。你可以点击 "x" 按钮关闭它。</p>
+
+                            <p>注意以下按钮，你带你倒下一个功能导航。</p>
+                        </li>
+                        <li data-id="second">
+                            <h4>第二个停止位置 Stop</h4>
+
+                            <p>你可以在这使用任何 HTML 代码</p>
+                        </li>
+                        <li data-button="End">
+                            <h4>结束位置</h4>
+
+                            <p>结束位置，你可以从头开始，或者关闭它。</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="row">
+                    <p>33.Foundation 网格</p>
+
+                    <p>.small (手机端) .medium (平板设备) .large (电脑设备：笔记本，台式机)</p>
+
+                    <p>大型设备上的比例为 33%/66%， 中型设备比例为 50%/50% ，小型设备比例为 25%/75% 。</p>
+
+                    <div class="small-3 medium-6 large-4 columns" style="background-color:yellow;">
+                        <p>第1列</p>
+                    </div>
+                    <div class="small-9 medium-6 large-8 columns" style="background-color:pink;">
+                        <p>第2列</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p>34.Foundation 块状网格</p>
+
+                    <p>通过添加多个块类，在不同屏幕指定不同是均分数量:</p>
+                    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+                        <li><img src="newyork.jpg" alt="New York" width="400" height="300"></li>
+                        <li><img src="paris.jpg" alt="Paris" width="400" height="300"></li>
+                        <li><img src="sanfran.jpg" alt="San Francisco" width="400" height="300"></li>
+                        <li><img src="newyork.jpg" alt="New York" width="400" height="300"></li>
+                    </ul>
+                </div>
+
+                <!-- 水平线 -->
+                <hr>
+
+                <!--表格样式 - 灰色斑马条纹且包含四个边框 -->
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 卡片样式 面板 -->
+    <div class="panel" style="padding: 0;border: none;width: 50%">
+        <img src="http://www.runoob.com/wp-content/uploads/2015/11/20121204024112919.jpg" alt="Cinque Terre"
+             style="width: 100%">
+
+        <div style=" text-align: center;padding: 15px;margin-top: 20px;">
+            <h4>我是卡片样式的面板哦~~~</h4>
+
+            <p>不到长城非好汉！！！</p>
+        </div>
+    </div>
+
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="foundation.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).foundation();
+
+//            初始化引导标签joyride
+            $(document).foundation('joyride', 'start');
+        });
+    </script>
+</div>
+</body>
+</html>

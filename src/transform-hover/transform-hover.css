@@ -1,0 +1,347 @@
+/*
+   hover移动效果 默认过渡时间:0.2s
+   //Mozilla内核浏览器：firefox3.5+
+   -moz-transform-origin: x y;
+   //Webkit内核浏览器：Safari and Chrome
+   -webkit-transform-origin: x y;
+   //Opera
+   -o-transform-origin: x y ;
+   //IE9
+   -ms-transform-origin: x y;
+   //W3C标准
+   transform-origin: x y ;
+
+   其他属性
+   transform-origin：默认情况，变形的原点在元素的中心点，或者是元素X轴和Y轴的50%处
+   transform-origin: x-axis(left/center/right/length/%) y-axis(top/center/bottom/length/%) z-axis(length);
+
+   transition主要包含四个属性值：
+     transition ： [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]*
+   执行变换的属性：transition-property,变换延续的时间：transition-duration,在延续时间段，变换的速率变化transition-timing-function,变换延迟时间transition-delay
+*/
+
+/*  2D位移    接受CSS的标准度量单位    默认移动精度：10px
+    translate(x,y)：用来移动元素，可以根据X轴和Ｙ轴坐标重新定位元素位置
+    translateX(x)      translateY(y)
+    3D位移   translate3d(x,y,z)  translateZ(z)
+    X > 0 右 ;  X < 0 左
+    Y > 0 下 ； Y < 0 上
+*/
+
+/* 位移：右 */
+.trans-right:hover {
+    position: relative;
+    -moz-transform: translateX(10px);
+    -moz-transition: all .2s;
+    -webkit-transform: translateX(10px);
+    -webkit-transition: all .2s;
+    -o-transform: translateX(10px);
+    -o-transition: all .2s;
+    transform: translateX(10px);
+    transition: all .2s;
+}
+
+/* 位移：左 */
+.trans-left:hover {
+    position: relative;
+    -moz-transform: translateX(-10px);
+    -moz-transition: all .2s;
+    -webkit-transform: translateX(-10px);
+    -webkit-transition: all .2s;
+    -o-transform: translateX(-10px);
+    -o-transition: all .2s;
+    transform: translateX(-10px);
+    transition: all .2s;
+}
+
+/* 位移：上 */
+.trans-up:hover {
+    position: relative;
+    -moz-transform: translateY(-10px);
+    -moz-transition: all .2s;
+    -webkit-transform: translateY(-10px);
+    -webkit-transition: all .2s;
+    -o-transform: translateY(-10px);
+    -o-transition: all .2s;
+    transform: translateY(-10px);
+    transition: all .2s;
+}
+
+/* 位移：下 */
+.trans-down:hover {
+    position: relative;
+    -moz-transform: translateY(10px);
+    -moz-transition: all .2s;
+    -webkit-transform: translateY(10px);
+    -webkit-transition: all .2s;
+    -o-transform: translateY(10px);
+    -o-transition: all .2s;
+    transform: translateY(10px);
+    transition: all .2s;
+}
+
+/* 位移：左下 */
+.trans-left-down:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: translate(-10px, 10px);
+    -ms-transform: translate(-10px, 10px);
+    transform: translate(-10px, 10px);
+}
+
+/* 位移：左上 */
+.trans-left-up:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: translate(-10px, -10px);
+    -ms-transform: translate(-10px, -10px);
+    transform: translate(-10px, -10px);
+}
+
+/* 位移：右下 */
+.trans-right-down:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: translate(10px, 10px);
+    -ms-transform: translate(10px, 10px);
+    transform: translate(10px, 10px);
+}
+
+/* 位移：右上 */
+.trans-right-up:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: translate(10px, -10px);
+    -ms-transform: translate(10px, -10px);
+    transform: translate(10px, -10px);
+}
+
+/*  2D缩放 接受一个0和1之间的十进制值  默认缩放精度: 0.1
+    scale(x,y)       scaleX(x)          scaleY(y)
+    3D缩放 scale3d(x,y,z)  使用后会变模糊
+*/
+/* 缩放：缩小 */
+.scale-shrink:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: scale(.9, .9);
+    -ms-transform: scale(.9, .9);
+    transform: scale(.9, .9);
+}
+
+/* 缩放：扩大 */
+.scale-expand:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
+/* 缩放：横向缩小 */
+.scale-X-shrink:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: scaleX(.9);
+    -ms-transform: scaleX(.9);
+    transform: scaleX(.9);
+}
+
+/* 缩放：横向扩大 */
+.scale-X-expand:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: scaleX(1.1);
+    -ms-transform: scaleX(1.1);
+    transform: scaleX(1.1);
+}
+
+/* 缩放：纵向缩小 */
+.scale-Y-shrink:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: scaleY(.9);
+    -ms-transform: scaleY(.9);
+    transform: scaleY(.9);
+}
+
+/* 缩放：纵向扩大 */
+.scale-Y-expand:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: scaleY(1.1);
+    -ms-transform: scaleY(1.1);
+    transform: scaleY(1.1);
+}
+
+/*  2D旋转 接受径向的度量单位值deg
+    rotate(angle)
+    3D旋转
+    rotate3d(x,y,z,angle)
+*/
+/* 旋转10度 */
+.rotate-10:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+
+/* 旋转20度 */
+.rotate-20:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+
+/* 旋转30度 */
+.rotate-30:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+/* 旋转40度 */
+.rotate-40:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+/* 旋转45度 */
+.rotate-45:hover {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* 旋转90度 */
+.rotate-90:hover {
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/* 旋转180度 */
+.rotate-180:hover {
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* 旋转270度 */
+.rotate-270:hover {
+    -moz-transition: all .7s;
+    -webkit-transition: all .7s;
+    -o-transition: all .7s;
+    transition: all .7s;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+/* 旋转360度 */
+.rotate-360:hover {
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/*  2D斜切转换 定义沿着 X 和 Y 轴的 2D 倾斜转换。  接受径向的度量单位值deg
+    skew(x-angle,y-angle)
+    skewX(angle)         skewY(angle)
+*/
+/* 斜切 10度 */
+.skew-10-10:hover {
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: skew(10deg, 10deg);
+    -ms-transform: skew(10deg, 10deg);
+    transform: skew(10deg, 10deg);
+}
+
+/* 斜切 30度 */
+.skew-30-30:hover {
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: skew(30deg, 30deg);
+    -ms-transform: skew(30deg, 30deg);
+    transform: skew(30deg, 30deg);
+}
+
+/* 斜切 45度 */
+.skew-45-45:hover {
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: skew(45deg, 45deg);
+    -ms-transform: skew(45deg, 45deg);
+    transform: skew(45deg, 45deg);
+}
+
+/* 斜切 180度 */
+.skew-180-180:hover {
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-transform: skew(180deg, 180deg);
+    -ms-transform: skew(180deg, 180deg);
+    transform: skew(180deg, 180deg);
+}

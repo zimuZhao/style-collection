@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1"/>
+    <title>刮刮卡</title>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+</head>
+<body style="overflow:hidden">
+
+<div id="bg" style="position:absolute;top:0;left:0;">
+    <img src="scratch-card/guaguaka_bg.jpg" style="width:100%; height:auto"/>
+</div>
+
+<div id="gua1" style="width:295px;;margin:0 auto;">
+    <img id="gua1_img" src="scratch-card/gua_image.png"
+         style="position: absolute;">
+    <canvas id="front" style="position:absolute;background-repeat:no-repeat"></canvas>
+</div>
+<script type="text/javascript">
+    var gua = 1, re = 2;
+    var imgSrc = 'scratch-card/aa.png';
+
+    $("img").load(function () {
+        $("#gua1_img").width(300).height(160);
+        var height = 141;
+        var width = 285;
+
+        $("#gua1").css({"margin-top": "20px"});
+
+        $("#front").css({"margin-top": 9.3 + "px", "margin-left": 7.5 + "px"});
+        $("#bg").width("100%").height($(window).height() - 1);
+        if (gua > 0) {
+            bodys(height, width);
+        }
+    });
+    function bodys(height, width) {
+        var img = new Image();
+        var canvas = document.querySelector('canvas');
+        canvas.style.position = 'absolute';
+        img.addEventListener('load', function (e) {
+            var ctx;
+            var w = width, h = height;
+            var offsetX = canvas.offsetLeft, offsetY = canvas.offsetTop;
+            var mousedown = false;
+
+            function layer(ctx) {
+                ctx.fillStyle = 'gray';
+                ctx.fillRect(0, 0, w, h);
+            }
+
+            function eventDown(e) {
+                e.preventDefault();
+                mousedown = true;
+            }
+
+            function eventUp(e) {
+                e.preventDefault();
+                mousedown = false;
+            }
+
+            function eventMove(e) {
+                e.preventDefault();
+                if (mousedown) {
+                    if (e.changedTouches) {
+                        e = e.changedTouches[e.changedTouches.length - 1];
+                    }
+                    var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+                            y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+                    with (ctx) {
+                        beginPath()
+                        arc(x, y, 15, 0, Math.PI * 2);
+                        fill();
+                    }
+                }
+            }
+
+            canvas.width = w;
+            canvas.height = h;
+
+            canvas.style.backgroundImage = 'url(' + img.src + ')';
+            ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'b9b9b9';
+            ctx.fillRect(0, 0, w, h);
+
+            layer(ctx);
+            ctx.globalCompositeOperation = 'destination-out';
+            canvas.addEventListener('touchstart', eventDown);
+            canvas.addEventListener('touchend', eventUp);
+            canvas.addEventListener('touchmove', eventMove);
+            canvas.addEventListener('mousedown', eventDown);
+            canvas.addEventListener('mouseup', eventUp);
+            canvas.addEventListener('mousemove', eventMove);
+        });
+        img.src = imgSrc;
+        (document.body.style);
+    }
+
+</script>
+</body>
+</html>

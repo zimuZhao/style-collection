@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>漂亮的自定义滚动条</title>
+    <style type="text/css">
+        #boxscroll {
+            padding: 40px;
+            height: 220px;
+            width: 300px;
+            border: 2px solid #00F;
+            overflow: auto;
+
+            display: inline-block;
+        }
+
+        #boxscroll2 {
+            padding: 40px;
+            height: 220px;
+            width: 700px;
+            border: 2px solid #F00;
+            overflow: auto;
+
+            display: inline-block;
+        }
+
+        #boxscroll4 {
+            height: 300px;
+            margin-top: 40px;
+            background-color: #00FF66;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 18px;
+            padding: 20px;
+            color: #006633;
+            overflow: auto;
+        }
+    </style>
+
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="jquery.nicescroll.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var nice = $("html").niceScroll();  // The document page (body)
+
+            $("#div1").html($("#div1").html() + ' ' + nice.version);
+
+            $("#boxscroll").niceScroll({cursorborder: "", cursorcolor: "#00F", boxzoom: true}); // First scrollable DIV
+
+            $("#boxscroll2").niceScroll("#contentscroll2", {
+                cursorcolor: "#F00",
+                cursoropacitymax: 0.7,
+                boxzoom: true,
+                touchbehavior: true
+            });  // Second scrollable DIV
+
+            $("#boxscroll4").niceScroll("#boxscroll4 .wrapper", {boxzoom: true});  // hw acceleration enabled when using wrapper
+
+        });
+    </script>
+
+    <meta name="viewport" content="user-scalable=no"/>
+
+</head>
+
+<body>
+
+<div id="div1"><strong>NiceScroll version:</strong></div>
+
+<div id="boxscroll">
+    <h2> Package Description </h2>
+
+    <p>Release Date: August 10, 2010</p>
+
+    <p>A major advantage of using this driver over those supplied by HP is the direct interface between HPIJS and the
+        native CUPS spooler, which allows printing from any printer over any available connection such as USB,
+        AppleTalk, TCP/IP (via LPD and IPP), HP JetDirect, and shared windows printers via SAMBA. Additionally, this
+        driver utilizes the existing Mac OS X USB &quot;backend&quot; and thus does not install any software that might
+        interfere with standard USB operation.</p>
+
+</div>
+
+<div id="boxscroll2">
+    <div id="contentscroll2">
+        THIS IS A DIV + WRAPPER
+        <h2>Package Description </h2>
+
+        <p>Release Date: August 10, 2010</p>
+
+        <p>A major advantage of using this driver over those supplied by HP is the direct interface between HPIJS and
+            the native CUPS spooler, which allows printing from any printer over any available connection such as USB,
+            AppleTalk, TCP/IP (via LPD and IPP), HP JetDirect, and shared windows printers via SAMBA. Additionally, this
+            driver utilizes the existing Mac OS X USB &quot;backend&quot; and thus does not install any software that
+            might interfere with standard USB operation.</p>
+
+        <h2>Release Notes</h2>
+        <ul>
+            <li>This release fixes a problem with the PPDs that caused many job options such as page orientation,
+                color/grayscale mode, duplex printing, etc. to fail.
+            </li>
+            <li>HPIJS is HP's universal printer driver for most of their non-PostScript printers. It comes as a part of
+                HPLIP, HP Linux Imaging and Printing.
+            </li>
+            <li>The PPDs for HP printers are now sourced from the HPLIP package rather than the OpenPrinting.org
+                database.
+            </li>
+            <li>PPDs for printers from other manufacturers are provided by OpenPrinting.org.</li>
+            <li>Some printers are only partially supported. Printers such as<br/>
+                HP LaserJet 1022<br/>
+                HP LaserJet p1505n<br/>
+                HP LaserJet p12014<br/>
+                HP LaserJet p2035<br/>
+                require a proprietary plug-in for full support. This package does not contain or support such plug-ins.
+            </li>
+        </ul>
+        <h2> Printer Set Up Instructions </h2>
+
+        <p>To add a printer queue, Leopard (Mac OS X 10.5.x) users should use the Print &amp; Fax from System
+            Preferences. Click on the + (plus) icon at the lower left. A new window will open. In that window, click the
+            Default Browser icon at the top left. Highlight your printer in the section below. Use the &quot;Print Using&quot;
+            pop-up menu near the bottom of the window to select the correct PPD for your printer and click Add.</p>
+
+    </div>
+</div>
+
+<div id="boxscroll4">
+    <div class="wrapper">
+
+        <p>Goggles or safety glasses are forms of protective eyewear that usually enclose or protect the area
+            surrounding the eye in order to prevent particulates, water or chemicals from striking the eyes. They are
+            used in chemistry laboratories and in woodworking. They are often used in snow sports as well, and in
+            swimming. Goggles are often worn when using power tools such as drills or chainsaws to prevent flying
+            particles from damaging the eyes. Many types of goggles are available as prescription goggles for those with
+            vision problems.<br/>
+            Contents<br/>
+            [hide] </p>
+
+        <p> 1 History<br/>
+            2 Types<br/>
+            3 Fashion<br/>
+            4 Non-human<br/>
+            5 See also<br/>
+            6 References</p>
+
+        <p>History</p>
+
+        <p> Cold weather: Most modern cold-weather goggles have two layers of lens to prevent the interior from becoming
+            &quot;foggy&quot;. With only a single lens, the interior water vapor condenses onto the lens because the
+            lens is colder than the vapor, although anti-fog agents can be used. The reasoning behind dual layer lens is
+            that the inner lens will be warm while the outer lens will be cold. As long as the temperature of the inner
+            lens is close to that of the interior water vapor, the vapor should not condense. However, if water vapor
+            gets between the layers of the lens, condensation can occur between the lenses and is almost impossible to
+            get rid of; thus, properly constructed and maintained dual-layer lenses should be air-tight to prevent water
+            vapor from getting in between the lenses.<br/>
+            Swimming: Must be watertight to prevent water, such as salt water when swimming in the ocean, or chlorinated
+            water when swimming in a pool, from irritating the eyes or blurring vision. Allows swimmers to see clearly
+            underwater. They will not be usable more than a few feet underwater, because the water pressure will press
+            them tightly against the face. Examples of these include the Swedish goggles.<br/>
+            Power tools: Must be made of an unbreakable material that prevents chunks of metal, wood, plastic, concrete,
+            and so on from hitting or piercing the eye. Usually has some sort of ventilation to prevent sweat from
+            building up inside the goggles and fogging the surface.<br/>
+            Blowtorch goggles: These protect the eyes from glare and flying sparks and hot metal splashes while using or
+            near as blowtorch. They are not the correct filters for arc welding.<br/>
+            Welding goggles: Includes all goggles for eye protection during welding or cutting. They provide protection
+            against debris, the heat from welding, and, with the proper filters, the optical radiation resulting from
+            the welding, which can otherwise cause arc eye.<br/>
+            Motorcycle riding and other open-air activities: Prevents insects, dust, and so on from hitting the
+            eyes.<br/>
+            Laboratory and research: Combines impact resistance with side shields to prevent chemical splashes reaching
+            the eyes. May also include laser protection which would be covered by EN 207 (Europe) and ANSI Z 136 (United
+            States). Examples of these include red adaptation goggles.<br/>
+            Racquetball: Protect the eyes from racquets swinging in an enclosed area and from impact from hard rubber
+            ball.<br/>
+            Winter sports: Protect the eyes from glare and from icy particles flying up from the ground.<br/>
+            Astronomy and meteorology: dark adaptor goggles are used before going outside at night, in order to help the
+            eyes adapt to the dark.<br/>
+
+        <p>Fashion</p>
+
+        <p>Goggles are often worn as a fashion statement in certain subcultures, most often as part of the cybergoth
+            subculture. They are usually worn over the eyes or up on the forehead to secure 'falls': a type of long,
+            often brightly-coloured, synthetic hairpiece. Fans of the steampunk genre or subculture also frequently wear
+            steampunk-styled goggles, particularly when performing in a live action role-playing game.</p>
+
+        <p>Goggles are also frequently used by anime and manga characters as a fashion statement. For example, it is an
+            idiosyncrasy of team leader characters in the Digimon anime to wear goggles. Other notable characters who
+            wear goggles are the young Naruto Uzumaki and Konohamaru from Naruto, Matt from Death Note and Usopp from
+            One Piece.<br/>
+            Non-human<br/>
+            Bullfighting horse wearing eye protection<br/>
+            A US Military working dog attached to a helicopter hoist in Afghanistan.</p>
+
+    </div>
+</div>
+
+<br>当调用“niceScroll”你可以传递一些参数来定制视觉方面：<br>
+cursorcolor - 十六进制改变光标颜色，默认值是“＃000000”<br>
+cursoropacitymin - 改变不透明度非常光标处于非活动状态（scrollabar“隐藏”状态），范围从1到0，默认为0（隐藏）<br>
+cursoropacitymax - 改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0，默认值是1（完全不透明）<br>
+cursorwidth - 像素光标的宽度，默认值为5<br>
+cursorborder - 游标边框css定义，默认为“1px的固体＃FFF”<br>
+cursorborderradius - 以像素为光标边界半径，默认为​​“递四方”<br>
+zIndex的 - 改变z-index值的滚动条的div，默认值是9999<br>
+scrollspeed - 滚动速度，默认值为60<br>
+mousescrollstep - 高速滚动鼠标滚轮，默认值是40（像素）<br>
+touchbehavior - 使光标拖动滚动像在台式电脑触摸设备（默认：false）<br>
+hwacceleration - 使用硬件加速滚动支持的时候（默认：true）<br>
+boxzoom - 使变焦框中的内容（默认：false）<br>
+dblclickzoom - （仅当boxzoom = TRUE）变焦激活时，双击对话框（默认：true）<br>
+gesturezoom - （仅当boxzoom =真实，使用触摸设备）上缩放框激活时，间距输出/输入（默认：true）<br>
+grabcursorenabled，显示“抢”图标的div touchbehavior = true时，（默认：true）<br>
+autohidemode，如何隐藏滚动条的作品，真=默认/“光标”=只进游标隐藏/ false =不隐藏背景，CSS改变轨道的背景下，默认为“”在加载事件iframeautoresize，AUTORESIZE的iframe（默认：true）<br>
+cursorminheight，设置在像素的最小光标高度（默认值：20）<br>
+preservenativescrolling，您可以滚动本机可滚动区域用鼠标，冒泡鼠标滚轮事件（默认：true）<br>
+railoffset，您可以添加抵消顶部/左边的轨道位置（默认：false）<br>
+bouncescroll，使滚动弹跳在内容结尾作为移动像（仅HW ACCELL）（默认：false）<br>
+spacebarenabled，使向下翻页时，空格键已经按下滚动（默认：true）<br>
+railpadding，设置填充为铁路吧（默认值：{顶：0，右：0，左：0，下：0}）<br>
+disableoutline，对于chrome浏览器，停用大纲（橙色hightlight）选择具有nicescroll一个div（默认：true）时，horizrailenabled，nicescroll可以管理水平滚动（默认：true）<br>
+railalign，取向垂直导轨（defaul：“右”）<br>
+railvalign，对齐水平导轨（defaul：“底部”）<br>
+enabletranslate3d，nicescroll可以使用CSS转换为滚动内容（默认：true）<br>
+enablemousewheel，nicescroll可以管理的鼠标滚轮事件（默认：true）<br>
+enablekeyboard，nicescroll可以管理键盘事件（默认：true）<br>
+smoothscroll，滚动自如移动（默认：true）<br>
+sensitiverail，点击轨道上进行滚动（默认：true）<br>
+enablemouselockapi，可以用鼠标说明锁的API（对象拖动同样的问题）（默认：true）<br>
+用于光标在像素cursorfixedheight，设置固定的高度（默认：false）<br>
+hidecursordelay，设置在微秒淡出滚动条的延迟时间（默认值：400）<br>
+在对方向锁定激活像素directionlockdeadzone，死区（默认值：6）<br>
+nativeparentscrolling，检测内容底部，并让家长来滚动，作为原生滚动做（默认：true）<br>
+enablescrollonselection，启用自动滚动的内容时，选择文本（默认：true）<br>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- 页面上html标签加载了相应的内容 boxshadow成功绑定 但no-boxshadow在IEtester IE6
+下无任何效果显示 有待进一步考证 -->
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>我来测试modernizr</title>
+    <!-- 如果浏览器支持box-shadows的话，Modernizr就会将boxshadow class添加到元素，
+    然后可以将它管理到一个相应的div的id上。如果不支持，Modernizr就会将no- boxshadow class
+    添加到元素，这样显示的就是一个标准的边框。-->
+    <style>
+        .boxshadow #myTest {
+            border: none;
+            -webkit-box-shadow: #666 1px 1px 1px;
+            -moz-box-shadow: #666 1px 1px 1px;
+        }
+
+        .no-boxshadow #myTest {
+            border: 2px solid black;
+        }
+    </style>
+    <script src="./modernizr-custom.js"></script>
+</head>
+
+<body>
+    <div id="myTest" style="background-color:red;width:100px;height:100px"></div>
+</body>
+</html>

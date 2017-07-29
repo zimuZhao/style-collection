@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Transition平滑过渡效果</title>
+    <link rel="stylesheet" href="transition.css"/>
+    <style type="text/css">
+        .div1 {
+            display: inline-block;
+            margin-right: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div id="demo1">
+        <div id="ease" class="demo-box">Ease</div>
+        <div id="ease-in" class="demo-box">Ease-in</div>
+        <div id="ease-out" class="demo-box">Ease-out</div>
+        <div id="ease-in-out" class="demo-box">Ease-in-out</div>
+        <div id="linear" class="demo-box">Linear</div>
+        <div id="cubic-bezier" class="demo-box">Cubic-bezier</div>
+    </div>
+    <button id="demo1-btn" class="demo-box">点我试试</button>
+</div>
+
+<div class="div1">
+    <div id="demoSliderContainer">
+        <ul id="demoSlider" class="slide-images">
+            <li class="slide-image">
+                <img src="transition/feiwu1.jpg" alt="feiwu1"/>
+                <span>飞屋环游记1</span>
+            </li>
+            <li class="slide-image">
+                <img src="transition/feiwu2.jpg" alt="feiwu2"/>
+                <span>飞屋环游记2</span>
+            </li>
+            <li class="slide-image">
+                <img src="transition/feiwu3.jpg" alt="feiwu3"/>
+                <span>飞屋环游记3</span>
+            </li>
+            <li class="slide-image">
+                <img src="transition/feiwu4.jpg" alt="feiwu4"/>
+                <span>飞屋环游记4</span>
+            </li>
+        </ul>
+        <div class="options">
+            <a href="javascript:;" class="prevSlide">Prev</a>
+      <span class="slide-pager">
+        <a href="" class="javascript:;">1</a>
+        <a href="" class="javascript:;">2</a>
+        <a href="" class="javascript:;">3</a>
+        <a href="" class="javascript:;">4</a>
+      </span>
+            <a href="javascript:;" class="nextSlide">Next</a>
+        </div>
+    </div>
+    <div id="options">
+        <label for="transitionEffect">过渡效果:</label>
+        <select id="transitionEffect">
+            <option value="transition-opacity">opacity fade</option>
+            <option value="transition-left">left slide</option>
+            <option value="transition-right">right slide</option>
+            <option value="transition-top">top slide</option>
+            <option value="transition-bottom">bottom slide</option>
+            <option value="transition-zoom">zoom</option>
+            <option value="transition-dezoom">de-zoom</option>
+            <option value="transition-cornerzoom">corner zoom</option>
+            <option value="transition-rotate">rotate</option>
+        </select>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" SRC="transition.js"></script>
+
+</body>
+</html>

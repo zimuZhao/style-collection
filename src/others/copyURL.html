@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>复制到剪切板</title>
+</head>
+<!-- 在Safari中无效 -->
+<body>
+    <input type="text" id="website" value="http://www.baidu.com/" />
+    <button data-copytarget="#website">复制</button>
+
+    <script>
+        (function() {
+
+            'use strict';
+
+            // click events
+            // 添加点击事件
+            document.body.addEventListener('click', copy, true);
+
+            // event handler
+            // 添加时间处理方法
+            function copy(e) {
+
+                // find target element
+                // 搜索目标元素
+                var
+                    t = e.target,
+                    c = t.dataset.copytarget,
+                    inp = (c ? document.querySelector(c) : null);
+
+                // is element selectable?
+                // 判断元素是否能被选中
+                if(inp && inp.select){
+
+                    // select text
+                    // 选择文本
+                    inp.select();
+
+                    try {
+                        // copy text
+                        // 复制文本
+                        document.execCommand('copy');
+                        inp.blur();
+                    } catch (err) {
+                        alert('please press Ctrl/Cmd+C to copy');
+                    }
+
+                }
+
+            }
+
+        })();
+    </script>
+</body>
+
+</html>

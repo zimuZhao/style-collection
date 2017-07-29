@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+   Software Testing and Quality Assurance - nextDay
+ -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nextDay</title>
+    <link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+
+    <body class="is-loading">
+
+        <!-- Wrapper -->
+        <div class="wrapper">
+
+            <!-- Main -->
+            <section class="main">
+                <header>
+                    <span class="avatar"></span>
+                    <h1>The NextDay</h1>
+                    <p>&diams;&nbsp;查询下一天的日期信息&nbsp;&diams;</p>
+                </header>
+
+                <hr />
+                <h2>请输入要查询的日期</h2>
+                <div class="field">
+                    <input type="text" name="date" id="Date" placeholder="按'yyyy-mm-dd'格式输入" autofocus="autofoucus"/>
+                </div>
+                <ul class="actions">
+                    <li><a href="#" id="Check" class="button">确&nbsp;&nbsp;定</a></li>
+                </ul>
+                <hr />
+
+                <div>
+                    <p id="Result"></p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <ul class="copyright">
+                    <li>&copy; zimu</li>
+                    <li>2016-09-24</li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+
+        <script type="text/javascript" src="./lunar-calendar.js"></script>
+        <script type="text/javascript" src="./nextday.js"></script>
+        <!-- <script type="text/javascript" src="./nextday.build.js"></script> -->
+    </body>
+
+</html>

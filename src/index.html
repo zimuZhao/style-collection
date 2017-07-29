@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>啦啦啦~ 我是首页</title>
+
+    <!--
+       html5shiv：解决ie9以下浏览器对html5新增标签的不识别，并导致CSS不起作用的问题。
+       respond.min:让不支持css3 Media Query的浏览器包括IE6-IE8等其他浏览器支持查询。
+       由于IE6/IE7/IE8还有很大一部分用户，为了让网站浏览者都能正常的访问HTML5网站
+       这里给出的是百度静态资源公共库CDN加速 -->
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <!-- CDN加载示例 -->
+    <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js" type="text/javascript"><\/script>')
+    </script> -->
+</head>
+<style type="text/css">
+    a {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        font-family: cursive, "隶书";
+    }
+
+    h3 {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        font-family: cursive, "隶书";
+    }
+</style>
+
+<body>
+    <h3>啦啦啦~ 请选择跳转</h3>
+    <a href="animate/animate.html">Animate效果</a>
+    <a href="beat-draw/beat-draw.html">抽奖：跳动</a>
+    <a href="daterangepicker/bootstrap-daterangepicker.html">控件：Bootstrap时间选择</a>
+    <a href="foundation/foundation.html">foundation样例</a>
+    <a href="loading/loading.html">八爪loading</a>
+    <a href="nicescroll/nicescroll.html">控件：nicescroll自定义滚动条</a>
+    <a href="others/copyURL.html">复制到剪切板</a>
+    <a href="others/div-layout.html">div布局位置</a>
+    <a href="others/form-new-label.html">CSS3三角形运用图案实例 + HTML5表单实用属性</a>
+    <a href="picture-lottery/index.html">抽奖：图片滚动</a>
+    <a href="scratch-card/scratch-card.html">刮刮卡效果</a>
+    <a href="scroll-to-draw/scroll-to-draw.html">抽奖：四位数字滚动</a>
+    <a href="swiper/swiper.html">控件：swiper整屏切换</a>
+    <a href="time-line/time-line.html">控件：时间轴</a>
+    <a href="transform-hover/transform-hover.html">hover的位移、缩放、旋转、斜切效果</a>
+    <a href="transition/transition.html">Transiton效果</a>
+    <a href="next-day/next-day.html">15.nextDay +（1900~2100）阴阳历转换</a>
+    <button id='view-fullscreen' onclick="fullScreen()">点我全屏</button>
+    <script>
+        // IE11以上  html5提供的方法
+        var viewFullScreen = document.getElementById("view-fullscreen");
+        if (viewFullScreen) {
+            viewFullScreen.addEventListener("click", function() {
+                var docElm = document.documentElement;
+                // w3c、IE11、FireFox、Chrome等
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                } else if (docElm.msRequestFullscreen) {
+                    docElm.msRequestFullscreen();
+                } else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                } else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+            }, false);
+        }
+        // IE9 要允许ActiveX ..启用插件.....
+        function fullScreen() {
+            var el = document.documentElement;
+            var rfs = el.requestFullScreen || el.webkitRequestFullScreen ||
+                el.mozRequestFullScreen || el.msRequestFullScreen;
+            if (typeof rfs != "undefined" && rfs) {
+                rfs.call(el);
+            } else if (typeof window.ActiveXObject != "undefined") {
+                //for IE，这里其实就是模拟了按下键盘的F11，使浏览器全屏
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript != null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        }
+
+        /**
+         * Chrome控制台 - 熊孩子实验
+         */
+        console.group("模块1");
+        console.log('%c普通信息', 'color:yellow', '我是变了色的普通信息');
+        console.info('提示性信息');
+        console.groupEnd();
+
+        console.error('错误信息');
+        console.warn('警示信息');
+
+        // 哇靠 以后都不用Jsonview了 好方便
+        var data = {
+            code: 200,
+            content: [{
+                '品名': '大西瓜',
+                '数量': 4
+            }, {
+                '品名': '姑娘儿',
+                '数量': 3
+            }]
+        };
+        console.table(data.content);
+
+        // Debug时显示log 一个变量搞定 再也不用慢慢注释了 棒棒哒~
+        var isDebug = false;
+        console.assert(isDebug, '开发中的log信息。。。');
+
+        // 计数 代码段的执行次数
+        function fun() {
+            console.count("fun()执行的次数：");
+        }
+        fun();
+        fun();
+
+        // 性能测试 代码段耗时情况
+        console.time("Array耗时");
+        var array = new Array(10000000);
+        for (var i = array.length - 1; i >= 0; i--) {
+            array[i] = new Object();
+        };
+        console.timeEnd("Array耗时");
+        // ends console调试
+    </script>
+</body>
+<!-- 回到顶部 -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<a class="top" href="#">回到顶部</a>
+<script>
+    // Back to top
+    // scrollTop 的值为想要 scrollbar 停止的地方 , 设置在 800 毫秒内回到顶部。
+    $('a.top').click(function(e) {
+        e.preventDefault();
+        $(document.body).animate({
+            scrollTop: 0
+        }, 800);
+    });
+</script>
+<!-- 自动修复损坏的图片 -->
+<script>
+    //网站的图片链接挂了，全部替换
+    $('img').on('error', function() {
+        $(this).prop('src', 'img/broken.png');
+    });
+</script>
+<!-- 停止链接加载 -->
+<script>
+    $('a.no-link').click(function(e) {
+        e.preventDefault();
+    });
+</script>
+
+</html>

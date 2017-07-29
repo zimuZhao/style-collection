@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>CSS3三角形运用图案实例 + HTML5表单实用属性</title>
+    <style>
+        /* 样式均为图案绘制服务 */
+
+        * {
+            font-family: simhei, sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        div {
+            margin: 20px auto;
+        }
+
+        .flag {
+            width: 0;
+            height: 0;
+            border: 2rem solid #FF6600;
+            border-top-width: 4rem;
+            border-bottom-color: transparent;
+            border-bottom-width: 2rem;
+        }
+
+        .rds-arrow-wrapper {
+            position: relative;
+            width: 20em;
+            text-align: center;
+        }
+
+        .rds-arrow,
+        .rds-arrow:after {
+            display: inline-block;
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 1rem solid transparent;
+            border-left: 2rem solid purple;
+            border-bottom: 1rem solid transparent;
+            border-right: 2rem solid transparent;
+        }
+
+        .rds-arrow {
+            margin-left: 1rem;
+        }
+
+        .rds-arrow:after {
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: -1rem;
+            bottom: 0;
+        }
+
+        .bubble {
+            position: relative;
+            background-color: #33AAEE;
+            width: 10rem;
+            height: 3rem;
+            font-size: 2rem;
+            line-height: 3rem;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .bubble:before {
+            position: absolute;
+            content: "";
+            right: 100%;
+            top: 1rem;
+            width: 0;
+            height: 0;
+            border-top: 0.6rem solid transparent;
+            border-right: 0.6rem solid #33AAEE;
+            border-bottom: 0.6rem solid transparent;
+            border-left: 0.6rem solid transparent;
+        }
+
+        .ribbon {
+            position: relative;
+            width: 10rem;
+            height: 3rem;
+            padding: 0.7rem 0;
+            font-size: 1.6rem !important;
+            color: #fff;
+            text-align: center;
+            background: #ff0066;
+        }
+
+        .ribbon:before,
+        .ribbon:after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: -0.6rem;
+            border: 1.5rem solid #ff0066;
+            z-index: -1;
+        }
+
+        .ribbon:before {
+            left: -2.4rem;
+            border-right-width: 1.5rem;
+            border-left-color: transparent;
+            box-shadow: 1px 1px 0 rgba(176, 102, 166, 0.8);
+        }
+
+        .ribbon:after {
+            right: -2.4rem;
+            border-left-width: 1.5rem;
+            border-right-color: transparent;
+            box-shadow: 0 1px 0 rgba(176, 102, 166, 0.8);
+        }
+
+        .ribbon .ribbon-content:before,
+        .ribbon .ribbon-content:after {
+            content: "";
+            position: absolute;
+            display: block;
+            border-style: solid;
+            border-color: #bf004c transparent transparent transparent;
+            bottom: -0.6rem;
+        }
+
+        .ribbon .ribbon-content:before {
+            left: 0;
+            border-width: 0.6rem 0 0 0.6rem;
+        }
+
+        .ribbon .ribbon-content:after {
+            right: 0;
+            border-width: 0.6rem 0.6rem 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 旗帜 -->
+    <div class="flag"></div>
+    <!-- 双实心箭头 -->
+    <div class="rds-arrow-wrapper">
+        <div class="rds-arrow"></div>
+    </div>
+    <!-- 气泡 -->
+    <div class="bubble">立即查看</div>
+    <!-- 丝带 -->
+    <div class="ribbon">
+        <span class="ribbon-content">金卡会员</span>
+    </div>
+
+    <h4>datalist标签：自动补全。</h4>
+    <!-- 浏览器兼容性有待提高 -->
+    <input type="text" list="demo">
+    <datalist id="demo">
+        <option>javascript</option>
+        <option>css</option>
+        <option>html</option>
+        <option>reactjs</option>
+        <option>nodejs</option>
+    </datalist>
+    <h4>output标签：运算输出</h4>
+    <form oninput="b.value = parseInt(a.value)*2">
+        <input type="number" name="a">乘以2=
+        <output name="b"></output>
+    </form>
+    <!-- output在form外部时 -->
+    <form id="demo1" oninput="b.value = parseInt(a.value)*2">
+        <input type="number" name="a"> 乘以2=
+    </form>
+    <output form="demo1" name="b" for="a"></output>
+    <h4>autocomplete 属性：可用在form标签和input标签，实现自动完成输入功能</h4>
+    <form autocomplete="on">
+        <input type="text">
+        <input type="text" autocomplete="off">
+    </form>
+    <h4>autofocus 属性：在页面加载时，域自动地获得焦点。</h4>
+    <input type="text" autofocus>
+    <h4>form 属性：规定input输入是属于哪个表单的。</h4>
+    <!-- 一般只会在当input标签不是form标签的子节点的情况下才会使用。 -->
+    <form id="demo2">
+        <input type="text">
+        <input type="submit" value="save">
+    </form>
+    <input type="text" form="demo2">
+    <h4>formaction 属性：用于描述表单提交的URL地址。</h4>
+    <!-- form表单有两个submit类型的提交按钮，而设置了formaction 属性的提交按钮，
+    会把数据提交到指定的地址，而没有设置formaction 属性的标签，就会提交到form表单action属性指定的地址 -->
+    <form action="a.php">
+        <input type="text">
+        <!--两个提交按钮-->
+        <input type="submit" value="save1">
+        <input type="submit" value="save2" formaction="b.php">
+    </form>
+    <h4>formtarget 属性：规定表单数据提交后跳转到的窗口。</h4>
+    <!-- 这个属性也是结合type=“submit“的input标签一起使用的，我们可以让表单数据提交
+    之后跳转到一个新窗口展示。只要我们设置formtarget属性的值为”_blank”。 -->
+    <input formtarget="_blank" type="submit" value="save2">
+    <h4>pattern 属性：描述一个正则表达式用于验证input元素的值</h4>
+    <input type="text" pattern="[0-9]{3}">
+    <h4>required 属性：规定必须在提交之前填写输入域（不能为空）。</h4>
+    <input type="text" required>
+    <h4>placeholder 属性：提示用户输入域所期待的值。</h4>
+    <input type="text" placeholder="请输入用户名">
+    <h4>color 类型：用在input字段主要用于选取颜色。</h4>
+    <!-- 所选择的颜色值可以能通过获取input标签的value值得到。 -->
+    <input type="color">
+    <h4>email 类型：包含 e-mail 地址的输入域</h4>
+    <input type="email">
+    <h4>number 类型：用于应该包含数值的输入域。</h4>
+    <!-- 如果number类型使用在手机上，当输入域获得焦点打开手机键盘的时候，
+    会默认打开数字键盘，方便用户使用 -->
+    <input type="number" min="0" max="100" step="5" value="5">
+    <h4>range 类型：包含一定范围内数字值的滑动组件。</h4>
+    <input type="range" min="0" max="5">
+    <h4>search 类型：用于搜索域。</h4>
+    <input type="search">
+    <h4>tel 类型：用于电话号码输入域。</h4>
+    <input type="tel">
+    <h4>url 类型：用于包含 URL 地址的输入域</h4>
+    <input type="url">
+    <h4>date 类型：定义一个日期选择器。</h4>
+    <input type="date">
+    <!-- 目前浏览器对此类型的支持并不完善，主流浏览器几乎都不支持，慎用！ -->
+    <h4>datetime 类型：选择一个日期和时间（世界统一时间）。</h4>
+    <input type="datetime">
+    <h4>datetime-local类型：选择一个日期和时间 (无时区)。</h4>
+    <!-- 如果是移动端使用，会调用系统默认的日期时间选择组件 -->
+    <input type="datetime-local">
+    <h4>还有些type包括month、time、week</h4>
+</body>
+
+</html>
